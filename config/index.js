@@ -3,6 +3,8 @@ var path = require('path')
 module.exports = {
 	build: {
 		env: 'production',
+    path: path.resolve(__dirname,'../dist'),
+    publicPath: '/',
 		cssSourceMap: false,
 		cssExtra: true
 	},

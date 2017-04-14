@@ -2,13 +2,19 @@ var gulp = require('gulp')
 var rimraf = require('rimraf')
 var webpack = require('webpack')
 var webpackConfig = require('../webpack.dev.js')
+var buildConfig = require('../webpack.build.js')
 var WebpackDevServer = require("webpack-dev-server")
 var config = require('../../config')
 var opn = require('opn')
 
 
 gulp.task('webpack:clean',function (cb) {
-	rimraf('./static',cb)
+	rimraf('./static',function() {
+      rimraf('./dist',function () {
+        cb()
+      })
+  })
+  
 })
 
 
@@ -25,6 +31,8 @@ gulp.task('dev:server',function (callback) {
 	})
 })
 
-gulp.task('build',function () {
-	
+gulp.task('build',['webpack:clean'],function (cb) {
+	webpack(buildConfig,function () {
+    cb()
+  })
 })
