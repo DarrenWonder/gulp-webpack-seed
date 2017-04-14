@@ -1,0 +1,20 @@
+{
+  "name": "gwseed",
+  "description": "dulp&webpack seed",
+  "main": "index.js",
+  "authors": [
+    "DarrenWang <568283034@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vender",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.2.1"
+  }
+}
